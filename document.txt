@@ -1,0 +1,8 @@
+npm create tauri-app@latest 
+
+npm install kaplay@3000.1.17
+
+"dev": "tauri dev"
+as we have two systems going on 
+vite: bundler , bundles ur webcode and puts it on a local host that u can use 
+tauri: takes this output & puts it in a desktop window
