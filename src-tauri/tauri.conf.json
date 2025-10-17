@@ -2,7 +2,7 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "scarybirds",
   "version": "0.1.0",
-  "identifier": "com.dhrit.scarybirds",
+  "identifier": "jackie.game",
   "build": {
     "beforeDevCommand": "npm run dev:browser",
     "devUrl": "http://localhost:1420",
