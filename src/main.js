@@ -9,3 +9,17 @@ const k=kaplay({
     global:false,
     scale:2
 });
+
+//loading the assets
+
+k.loadSprite("jackie","./jackie.png");
+k.loadSprite("ghouls","./ghouls.png");
+k.loadSprite("graves","./graves.png");
+k.loadSprite("walls","./walls.png");
+
+k.loadSound("jump","./jump.wav");
+k.loadSound("hurt","./hurt.wav");
+k.loadSound("confirm","./confirm.wav");
+
+//letting user use full screen mode
+
