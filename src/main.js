@@ -20,10 +20,8 @@ const k=kaplay({
 
 k.loadSprite("background","./background.png");
 k.loadSprite("graves","./graves.png");
-k.loadSprite("graves2","./graves2.png");
 k.loadSprite("bg","./bg.png");
 k.loadSprite("ghouls","./ghouls.png");
-k.loadSprite("ghouls2","./ghouls2.png");
 k.loadSprite("walls","./walls.png");
 k.loadSprite("walls2","./walls2.png");
 k.loadSprite("jackie","./jackie.png");
@@ -49,11 +47,30 @@ k.scene("start", async () => {
   makeBackground(k);
 
   const map = k.add([
-    k.sprite("graves2"),
-    k.pos(-250,-2.5),
+    k.sprite("graves"),
+    k.pos(-250, -2.5),
     k.scale(SCALE_FACTOR), 
   ]);
-})//the actual content of the game
+
+  const clouds = map.add([
+    k.sprite("ghouls"),
+    k.pos(0, 0), // Start at position relative to map
+  ]);
+
+  const cloudSpeed = 5;
+
+  // Runs this func every frame 
+  clouds.onUpdate(() => {
+    clouds.pos.x += cloudSpeed * k.dt(); // Use delta time for smooth movement
+    
+    // Loop clouds back when they go off screen
+    if (clouds.pos.x > 700) {
+      clouds.pos.x = -500; 
+    } 
+  });
+});
+
+//the actual content of the game
 k.scene("menu", async ()=>{
 
 })
