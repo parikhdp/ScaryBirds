@@ -1,6 +1,7 @@
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import kaplay from 'kaplay';
 import { makeBackground } from './util.js';
+import { SCALE_FACTOR } from './constants.js';
 
 // Get the current window instance for Tauri v2
 const appWindow = getCurrentWindow();
@@ -17,10 +18,16 @@ const k=kaplay({
 
 //loading the assets
 
-k.loadSprite("jackie","./jackie.png");
-k.loadSprite("ghouls","./ghouls.png");
+k.loadSprite("background","./background.png");
 k.loadSprite("graves","./graves.png");
+k.loadSprite("graves2","./graves2.png");
+k.loadSprite("bg","./bg.png");
+k.loadSprite("ghouls","./ghouls.png");
+k.loadSprite("ghouls2","./ghouls2.png");
 k.loadSprite("walls","./walls.png");
+k.loadSprite("walls2","./walls2.png");
+k.loadSprite("jackie","./jackie.png");
+k.loadSprite("jackie2","./jackie2.png");
 
 k.loadSound("jump","./jump.wav");
 k.loadSound("hurt","./hurt.wav");
@@ -38,11 +45,15 @@ addEventListener("keydown",async(key)=>{
 });
 
 //the menu
-k.scene("start", async ()=>{
-    makeBackground(k);
-})
+k.scene("start", async () => {
+  makeBackground(k);
 
-//the actual content of the game
+  const map = k.add([
+    k.sprite("graves2"),
+    k.pos(-250,-2.5),
+    k.scale(SCALE_FACTOR), 
+  ]);
+})//the actual content of the game
 k.scene("menu", async ()=>{
 
 })
