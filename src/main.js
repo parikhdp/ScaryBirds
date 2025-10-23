@@ -68,6 +68,11 @@ k.scene("start", async () => {
       clouds.pos.x = -500; 
     } 
   });
+
+  map.add([
+    k.sprite("walls2"),
+    k.pos(),
+  ]);
 });
 
 //the actual content of the game
